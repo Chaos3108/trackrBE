@@ -41,8 +41,6 @@ def register_user(
         email=payload.email,
         password=hash_password(payload.password)
     )
-    print("Password:", payload.password)
-    print("Length:", len(payload.password))
 
     db.add(user)
     db.commit()
