@@ -1,3 +1,6 @@
+import os
+
+import uvicorn
 from fastapi import FastAPI
 from sqlalchemy import text
 
@@ -39,3 +42,12 @@ def home():
     return {
         "message": "Smart Job Tracker API Running"
     }
+
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "app.main:app",
+        host="0.0.0.0",
+        port=int(os.getenv("PORT", "8000")),
+        reload=False,
+    )
