@@ -1,5 +1,5 @@
-from typing import Optional
 from pydantic import BaseModel
+from typing import Optional
 
 
 class ApplicationCreate(BaseModel):
@@ -9,4 +9,3 @@ class ApplicationCreate(BaseModel):
     location: Optional[str] = None
     salary: Optional[int] = None
     notes: Optional[str] = None
-    user_id: int
