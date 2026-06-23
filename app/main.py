@@ -21,16 +21,13 @@ app = FastAPI(
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",     # Vite local
+    allow_origins=["http://localhost:5173",     # Vite local
         "http://127.0.0.1:5173",
-        "https://your-frontend.vercel.app",  # Replace with your frontend URL
-    ],
-    allow_credentials=True,
+        "https://hiretrackr.yuvakishorekolli.workers.dev/"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 app.include_router(auth_router)
 app.include_router(application_router)
 
